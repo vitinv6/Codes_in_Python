@@ -1,0 +1,32 @@
+# impactube
+canais = []
+n = int(input())
+for i in range(n):
+    canal = input().split(';')
+    canal[1] = int(canal[1])
+    canal[2] = float(canal[2])
+    canais.append(canal)
+X = float(input())
+Y = float(input())
+
+bonus = []
+nomes = []
+for canal in canais:
+    if canal[3] == 'sim':
+        conta = canal[1]//1000
+        canal[2] += conta * X
+        nomes.append(canal[0])
+        bonus.append(canal[2])
+    else:
+        conta = canal[1]//1000
+        canal[2] += conta * Y
+        nomes.append(canal[0])
+        bonus.append(canal[2])
+
+print('-----')
+print('BÔNUS')
+print('-----')
+i = 0
+for i in range(len(bonus)):
+    print(f'{nomes[i]}: R$ {bonus[i]:.2f}')
+    i += 2
