@@ -1,4 +1,4 @@
-a# salário com bônus
+# salário com bônus
 nome=input()
 salario=float(input())
 vendas=float(input())
