@@ -1,0 +1,10 @@
+# pirâmide de letras
+num = int(input())
+cont=1
+n=65
+while cont<=26 and n<=90:
+    print(f'{cont*chr(n)}')
+    cont+=1
+    n+=1
+    if cont == (num+1):
+      break
