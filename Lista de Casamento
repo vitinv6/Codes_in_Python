@@ -1,0 +1,47 @@
+noivo = []
+noiva = []
+conjunto1 = set(noivo)
+conjunto2 = set(noiva)
+
+entrada = input()
+while entrada != 'ACABOU':
+    convidado = entrada.split(';')
+    if convidado[1] == 'noivo':
+        conjunto1.add(convidado[0])
+    else:
+        conjunto2.add(convidado[0])
+    entrada = input()
+
+print(20*'-');print('LISTA FINAL');print(20*'-')
+final = list(conjunto1|conjunto2)
+final.sort()
+for pessoa in final:
+    print(pessoa)
+print()
+
+print(20*'-');print('APENAS NOIVA');print(20*'-')
+noiva = list(conjunto2-(conjunto1&conjunto2))
+noiva.sort()
+for pessoa in noiva:
+    print(pessoa)
+print()
+
+print(20*'-');print('APENAS NOIVO');print(20*'-')
+noivo = list(conjunto1-(conjunto1&conjunto2))
+noivo.sort()
+for pessoa in noivo:
+    print(pessoa)
+print()
+
+print(20*'-');print('POR AMBOS');print(20*'-')
+ambos = list(conjunto1&conjunto2)
+ambos.sort()
+for pessoa in ambos:
+    print(pessoa)
+print()
+
+print(20*'-');print('POR APENAS UM DELES');print(20*'-')
+A = list(conjunto1^conjunto2)
+A.sort()
+for pessoa in A:
+    print(pessoa)
