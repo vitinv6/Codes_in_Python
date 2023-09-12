@@ -1,0 +1,9 @@
+def pm(l,c,memo={}): 
+    if (l == 1 or c == x): 
+        return 1
+    if (l,c) not in memo:
+        memo[(l,c)] = pm(l - 1, c - 1) + pm(l - 1, c)
+    return memo[(l,c)]
+l,c = input().split(' ')
+l,c = int(l),int(c)
+print(pm(l,c))
