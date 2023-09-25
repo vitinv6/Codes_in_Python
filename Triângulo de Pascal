@@ -1,5 +1,5 @@
 def pm(l,c,memo={}): 
-    if (l == 1 or c == x): 
+    if (l == 1 or c == l): 
         return 1
     if (l,c) not in memo:
         memo[(l,c)] = pm(l - 1, c - 1) + pm(l - 1, c)
